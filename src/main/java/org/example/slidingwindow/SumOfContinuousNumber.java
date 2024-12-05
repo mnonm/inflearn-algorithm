@@ -33,4 +33,31 @@ public class SumOfContinuousNumber {
 
         return result;
     }
+
+    /**
+     * 수학적 방식
+     * 1. 1부터 하나씩 증가하면서 n까지 숫자를 합한다
+     * 2. targetNumber에서 합한 숫자를 제외하고 n개로 나눴을 때 나머지가 0이면 연속된 수로 targetNumber를 만들 수 있다
+     *  ex1) targetNumber = 15
+     *      1 + 2 = 3
+     *      15 - 3 = 12
+     *      12 / 2 = 6
+     *   -> (1 + 6) + (2 + 6) = 15
+     */
+    public int solution2(int targetNumber) {
+        int result = 0;
+        int sum = 1;
+        for (int i = 2; i < targetNumber; i++) {
+            sum += i;
+
+            if (sum > targetNumber) {
+                break;
+            }
+
+            if ((targetNumber - sum) % i == 0) {
+                result++;
+            }
+        }
+        return result;
+    }
 }

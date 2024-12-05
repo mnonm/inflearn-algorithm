@@ -25,4 +25,22 @@ class SumOfContinuousNumberTest {
         assertThat(result).isEqualTo(0);
     }
 
+    @Test
+    void test3() {
+        // given, when
+        int result = sumOfContinuousNumber.solution2(15);
+
+        // then
+        assertThat(result).isEqualTo(3);
+    }
+
+    @Test
+    void test4() {
+        // given, when
+        int result = sumOfContinuousNumber.solution2(16);
+
+        // then
+        assertThat(result).isEqualTo(0);
+    }
+
 }
